@@ -21,7 +21,7 @@ export const App = () => {
   return (
     <ChakraProvider theme={theme}>
       <Global styles={GlobalStyles} />
-      <Router>
+      <Router basename={"https://ishowta.github.io/dovon-quiz/"}>
         <Switch>
           <Route path="/play">
             <Play />
