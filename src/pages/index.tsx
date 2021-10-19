@@ -14,6 +14,8 @@ import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { useHistory } from "react-router";
 
+const rootPath = `/dovon-quiz`;
+
 export const Index = () => {
   const [odai, setOdai] = useState("");
   const [sentakusiList, setSentakusiList] = useState<string[]>([]);
@@ -26,7 +28,7 @@ export const Index = () => {
       sentakusis: sentakusiList.join(","),
       dobon: (rand * 387 + dobon).toString(),
     }).toString();
-    window.open(`${location.origin}/play?${data}`, "_blank");
+    window.open(`${rootPath}/play?${data}`, "_blank");
   };
 
   return (
