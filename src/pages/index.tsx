@@ -26,7 +26,7 @@ export const Index = () => {
       sentakusis: sentakusiList.join(","),
       dobon: (rand * 387 + dobon).toString(),
     }).toString();
-    window.open(`/play?${data}`, "_blank");
+    window.open(`${location.origin}/play?${data}`, "_blank");
   };
 
   return (
