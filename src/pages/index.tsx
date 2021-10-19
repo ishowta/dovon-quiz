@@ -12,7 +12,8 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import { PUBLIC_URL } from "../App";
+import { useQuery } from "../App";
+import { Play } from "./play";
 
 export const Index = () => {
   const [odai, setOdai] = useState("");
@@ -22,14 +23,22 @@ export const Index = () => {
   const generate = () => {
     const rand = Math.floor(Math.random() * 100000000);
     const data = new URLSearchParams({
+      play: "true",
       odai,
       sentakusis: sentakusiList.join(","),
       dobon: (rand * 387 + dobon).toString(),
     }).toString();
-    window.open(`${PUBLIC_URL}play?${data}`, "_blank");
+    window.open(`${location.origin}${location.pathname}?${data}`, "_blank");
   };
 
-  return (
+  const query = useQuery();
+  const play = query.get("play");
+
+  console.log(play);
+
+  return play != null ? (
+    <Play />
+  ) : (
     <Center bg="background" minH="100vh" flexDir="column" color="white">
       <VStack spacing="2rem">
         <Heading>Dovon quiz generator</Heading>

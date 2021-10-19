@@ -14,10 +14,7 @@ import { ImCross } from "react-icons/im";
 import { BsCircle } from "react-icons/bs";
 import { useHistory, useLocation } from "react-router";
 import { TwitterIcon, TwitterShareButton } from "react-share";
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+import { useQuery } from "../App";
 
 export const Play = () => {
   const history = useHistory();

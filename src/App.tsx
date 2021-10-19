@@ -4,9 +4,16 @@ import { Index } from "./pages";
 import { Play } from "./pages/play";
 import { theme } from "./theme";
 import { css, Global } from "@emotion/react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useLocation,
+} from "react-router-dom";
 
-export const PUBLIC_URL = "https://ishowta.github.io/dovon-quiz/";
+export function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
 const GlobalStyles = css`
   /*
@@ -23,11 +30,8 @@ export const App = () => {
   return (
     <ChakraProvider theme={theme}>
       <Global styles={GlobalStyles} />
-      <Router basename={PUBLIC_URL}>
+      <Router>
         <Switch>
-          <Route path="/play">
-            <Play />
-          </Route>
           <Route path="/">
             <Index />
           </Route>
