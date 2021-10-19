@@ -24,6 +24,11 @@ const extension: ThemeOverride = {
     background: "#282c34",
   },
   components: {
+    Heading: {
+      baseStyle: {
+        color: "white",
+      },
+    },
     Text: {
       baseStyle: {
         fontSize: "2xl",

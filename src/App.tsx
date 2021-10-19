@@ -1,6 +1,7 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Index } from "./pages";
+import { Play } from "./pages/play";
 import { theme } from "./theme";
 import { css, Global } from "@emotion/react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -22,6 +23,9 @@ export const App = () => {
       <Global styles={GlobalStyles} />
       <Router>
         <Switch>
+          <Route path="/play">
+            <Play />
+          </Route>
           <Route path="/">
             <Index />
           </Route>
