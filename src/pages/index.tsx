@@ -12,9 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import { useHistory } from "react-router";
-
-const rootPath = `/dovon-quiz`;
+import { PUBLIC_URL } from "../App";
 
 export const Index = () => {
   const [odai, setOdai] = useState("");
@@ -28,7 +26,7 @@ export const Index = () => {
       sentakusis: sentakusiList.join(","),
       dobon: (rand * 387 + dobon).toString(),
     }).toString();
-    window.open(`${rootPath}/play?${data}`, "_blank");
+    window.open(`${PUBLIC_URL}play?${data}`, "_blank");
   };
 
   return (

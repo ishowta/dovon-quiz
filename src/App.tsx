@@ -6,6 +6,8 @@ import { theme } from "./theme";
 import { css, Global } from "@emotion/react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+export const PUBLIC_URL = "https://ishowta.github.io/dovon-quiz/";
+
 const GlobalStyles = css`
   /*
     This will hide the focus indicator if the element receives focus via the mouse,
@@ -21,7 +23,7 @@ export const App = () => {
   return (
     <ChakraProvider theme={theme}>
       <Global styles={GlobalStyles} />
-      <Router basename={"https://ishowta.github.io/dovon-quiz/"}>
+      <Router basename={PUBLIC_URL}>
         <Switch>
           <Route path="/play">
             <Play />
